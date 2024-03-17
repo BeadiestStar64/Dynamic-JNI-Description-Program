@@ -28,8 +28,10 @@ public class DynamicJNIDescription {
     }
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        new DynamicJNIDescription().sayHello();
     }
+
+    public native void sayHello();
 
     // Check if the library can be loaded here in advance.
     // If it cannot be loaded, it is assumed that the file is missing.

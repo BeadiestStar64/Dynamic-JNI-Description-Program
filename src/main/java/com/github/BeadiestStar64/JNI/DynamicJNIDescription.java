@@ -55,7 +55,7 @@ public class DynamicJNIDescription {
 
         Path libPath = Paths.get(libFolderPath, libFileName);
         if (!Files.exists(libPath)) {
-            try (InputStream input = DynamicJNIDescription.class.getResourceAsStream(File.separator + libFileName)) {
+            try (InputStream input = DynamicJNIDescription.class.getResourceAsStream("/" + libFileName)) {
                 if (input != null) {
                     Files.copy(input, libPath, StandardCopyOption.REPLACE_EXISTING);
                 } else {
